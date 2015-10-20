@@ -9,6 +9,8 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + '/public'));
 
+var team = require('./lib/team.js');
+
 app.get('/', function(req, res){
 	res.type('text/plain');
 	res.send('CS326 Turkey');
@@ -18,8 +20,32 @@ app.get('/about', function(req, res){
 	res.render('about');
 });
 
-app.get('/team', function(req, res){
-	res.render('team');
+app.get('/team*', function(req, res){
+//	if (req.path==='/team' && req.path.length===5){// buggggggggggggggggggggg
+//	var result = team.all();
+//	}
+//	else 
+	if(Object.keys(req.query).length === 0){
+		if(req.path==='/team'||req.path==='/team/'){
+			var result = team.all();
+		}
+		else{
+			res.status(404);
+			res.render('404');
+		}
+	}
+	else{
+		var result = team.one(req.query.user);
+	}
+	if(result.count!==0){
+		res.render('team', {
+			members: result.data,
+		});
+	}
+	else{
+		res.status(404);
+		res.render('404');
+	}
 });
 
 //custom 404 page
