@@ -24,7 +24,7 @@ app.get('/team*', function(req, res){
 //	if (req.path==='/team' && req.path.length===5){// buggggggggggggggggggggg
 //	var result = team.all();
 //	}
-//	else 
+//	else
 	if(Object.keys(req.query).length === 0){
 		if(req.path==='/team'||req.path==='/team/'){
 			var result = team.all();
