@@ -1,23 +1,27 @@
 {
-  "name": "meadowlarktravel",
-  "version": "0.0.0",
-  "description": "Sample website for Web Development with Node and Express (O'Reilly).",
-  "main": "meadowlark.js",
+  "name": "turkeyapp",
+  "version": "1.0.0",
+  "description": "cs326 turkey web app - glean",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express3-handlebars": "^0.5.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/EthanRBrown/web-development-with-node-and-express.git"
+    "url": "git+https://github.com/CS326-Turkey/TurkeyApp.git"
   },
-  "author": "Ethan Brown <e@zepln.com>",
-  "license": "GPL, MIT",
+  "keywords": [
+    "turkeyapp"
+  ],
+  "author": "team\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[Ccs326team-turkey",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EthanRBrown/web-development-with-node-and-express/issues"
+    "url": "https://github.com/CS326-Turkey/TurkeyApp/issues"
   },
-  "homepage": "https://github.com/EthanRBrown/web-development-with-node-and-express",
-  "dependencies": {
-    "express": "~4.4.2",
-    "express3-handlebars": "~0.5.0"
-  }
+  "homepage": "https://github.com/CS326-Turkey/TurkeyApp#readme"
 }
