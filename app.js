@@ -12,10 +12,26 @@ app.use(express.static(__dirname + '/public'));
 
 var team = require('./lib/team.js');
 
-app.get('/', function(req, res){
-	res.type('text/plain');
-	res.render('mockup');
+app.get('/', function(req, res) {
+	res.render('home');
 });
+
+app.get('/login', function(req, res) {
+	res.render('login');
+});
+
+app.get('/profile', function(req, res) {
+	res.render('profile');
+});
+
+app.get('/admin', function(req, res) {
+	res.render('settings');
+});
+
+app.get('/forum', function(req, res) {
+	res.render('forum');
+});
+
 
 app.get('/about', function(req, res){
 	res.render('about');
