@@ -10,8 +10,11 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 var team = require('./lib/team.js');
+var fs = require('fs');
+
 
 app.get('/', function(req, res){
+	
 	res.type('text/plain');
 	res.send('CS326 Turkey');
 });
@@ -21,10 +24,6 @@ app.get('/about', function(req, res){
 });
 
 app.get('/team*', function(req, res){
-//	if (req.path==='/team' && req.path.length===5){// buggggggggggggggggggggg
-//	var result = team.all();
-//	}
-//	else 
 	if(Object.keys(req.query).length === 0){
 		if(req.path==='/team'||req.path==='/team/'){
 			var result = team.all();
