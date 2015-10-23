@@ -14,7 +14,6 @@ var team = require('./lib/team.js');
 
 app.get('/', function(req, res) {
 	res.render('home');
-
 });
 
 app.get('/login', function(req, res) {
@@ -62,13 +61,13 @@ app.get('/team*', function(req, res){
 	}
 });
 
-//custom 404 page
+
 app.use(function(req, res){
 	res.status(404);
 	res.render('404');
 });
 
-//custom 500 page
+
 app.use(function(err, req, res, next){
 	console.error(err.stack);
 	res.status(500);
